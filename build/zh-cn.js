@@ -1,4 +1,9 @@
-export default {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = {
     lang: 'zh-cn',
     Popconfirm: {
         ok: '确认',
@@ -10,4 +15,5 @@ export default {
     Clipboard: {
         copy: '复制'
     }
-}
+};
+module.exports = exports['default'];

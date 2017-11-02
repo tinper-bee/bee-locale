@@ -11,7 +11,7 @@
 
 react bee-locale component for tinper-bee
 
-some description...
+tinper-bee 多语组件，通过传入语言包，来设置组件库的多语。
 
 ## 依赖
 
@@ -22,6 +22,31 @@ some description...
 ## 使用方法
 
 ```js
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import ReactDOM from 'react-dom';
+import Locale from 'bee-locale';
+import zhCn from 'bee-locale/src/zh-cn.js';
+
+class App extends Component {
+    render() {
+
+        return (
+            <div>
+                xxx
+            </div>
+        )
+    }
+}
+
+
+ReactDOM.render( (
+        <Locale locale={zhCn}>
+            <App />
+        </Locale>
+    )
+}
+
 
 ```
 
@@ -31,6 +56,25 @@ some description...
 
 |参数|说明|类型|默认值|
 |:--|:---:|:--:|---:|
+|locale|设置的语言对象|object|中文语言包|
+
+### 示例
+
+```
+export default {
+    lang: 'zh-cn',
+    Popconfirm: {
+        ok: '确认',
+        cancel: '取消'
+    },
+    Table: {
+        noData: '无数据'
+    },
+    Clipboard: {
+        copy: '复制'
+    }
+}
+```
 
 #### 开发调试
 

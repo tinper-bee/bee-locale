@@ -20,7 +20,7 @@ export function getComponentLocale(props, context, componentName, getDefaultLoca
 }
 
 export function getLocaleCode(context) {
-    const localeCode = context.beeLocale && context.beeLocale.locale;
+    const localeCode = context.beeLocale && context.beeLocale.lang;
     // Had use LocaleProvide but didn't set locale
     if (context.beeLocale && context.beeLocale.exist && !localeCode) {
         return 'zh-cn';
