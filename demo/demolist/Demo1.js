@@ -1,37 +1,30 @@
 /**
  *
- * @title 这是标题
- * @description 这是描述
+ * @title 多语组件设置组件的语言
+ * @description 按照固定的格式传入语言对象，会自动改变组件内默认文字的语言。
  *
  */
 
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import Locale from '../../src';
+import Locale from '../../src'
+import Popconfirm from 'bee-popconfirm';
+import Button from 'bee-button';
+import En from '../../src/en_US';
 
-class Test extends Component {
+class Demo1 extends Component {
     render() {
-        console.log(this.context.beeLocale);
+        let content = 'Do yon like me?';
         return (
-            <div>
-                欢迎使用老赵DEMO系统
-            </div>
+            <Locale locale={En}>
+                <Popconfirm
+                    trigger="click"
+                    placement="right"
+                    content={content}>
+                    <Button colors="primary">see right!</Button>
+                </Popconfirm>
+            </Locale>
         )
     }
 }
-Test.contextTypes = {
-    beeLocale: PropTypes.object
-}
-
-
-function Demo1() {
-    return (
-        <Locale>
-            <Test />
-        </Locale>
-    )
-}
-
-
 
 export default Demo1;
