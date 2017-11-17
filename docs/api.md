@@ -1,4 +1,4 @@
-# Locale 国际化组件
+# Locale 多语组件
 
 Locale组件，在使用时，需要将你的App跟组件包裹起来。这样才能影响到所有使用的tinper-bee组件。
 
