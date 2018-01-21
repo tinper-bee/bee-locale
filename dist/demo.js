@@ -62,10 +62,6 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
-	var _src = __webpack_require__(105);
-	
-	var _src2 = _interopRequireDefault(_src);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
 	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
@@ -80,7 +76,7 @@
 	
 	var CARETUP = _react2['default'].createElement('i', { className: 'uf uf-arrow-up' });
 	
-	var Demo1 = __webpack_require__(108);var Demo2 = __webpack_require__(135);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 多语组件设置组件的语言", "code": "/**\n *\n * @title 多语组件设置组件的语言\n * @description 按照固定的格式传入语言对象，会自动改变组件内默认文字的语言。\n *\n */\n\nimport React, {Component} from 'react';\nimport Locale from 'bee-locale'\nimport Popconfirm from 'bee-popconfirm';\nimport Button from 'bee-button';\nimport En from '../../src/en_US';\n\nclass Demo1 extends Component {\n    render() {\n        let content = 'Do yon like me?';\n        return (\n            <Locale locale={En}>\n                <Popconfirm\n                    trigger=\"click\"\n                    placement=\"right\"\n                    content={content}>\n                    <Button colors=\"primary\">see right!</Button>\n                </Popconfirm>\n            </Locale>\n        )\n    }\n}\n\n", "desc": " 按照固定的格式传入语言对象，会自动改变组件内默认文字的语言。" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 项目中使用，及切换语言", "code": "/**\n *\n * @title 项目中使用，及切换语言\n * @description Locale组件通过context传递语言包，子组件通过contextTypes获取context上的beeLocale语言包对象。\n *\n */\n\nimport React, {Component} from 'react';\nimport Locale from 'bee-locale';\nimport PropTypes from 'prop-types';\nimport Popconfirm from 'bee-popconfirm';\nimport Button from 'bee-button';\nimport ZhCn from \"../../src/zh-cn\";\nimport En from \"../../src/en_US\";\n\nclass DemoButton extends Component{\n    render() {\n       let localeText = this.context.beeLocale.DemoButton.text;\n        return (\n            <div style={{ marginBottom: 20}}>\n                <Button onClick={this.props.onChangeLang} colors=\"primary\">\n                    {localeText}\n                </Button>\n            </div>\n\n        )\n    }\n}\nDemoButton.contextTypes = {\n    beeLocale: PropTypes.object\n}\n\nlet en = {\n    ...En,\n    DemoButton: {\n        text: 'Change Language'\n    },\n    PopconfirmContent: {\n       content: 'Do you like tinper-bee UI library?' ,\n        buttonText: 'see right'\n    }\n};\n\nlet zhCn = {\n    ...ZhCn,\n    DemoButton: {\n        text: '切换语言'\n    },\n    PopconfirmContent: {\n        content: '你喜欢tinper-bee组件库吗？' ,\n        buttonText: '看右边'\n    }\n};\n\n\n\nclass Demo1 extends Component {\n    state = {\n        lang: zhCn\n    }\n    handleChangeLang = () => {\n        let { lang } = this.state;\n        if(lang.lang === 'zh-cn'){\n            this.setState({\n                lang: en\n            })\n        }else{\n            this.setState({\n                lang: zhCn\n            })\n        }\n\n    }\n    render() {\n        let { lang } = this.state;\n\n        return (\n            <Locale locale={lang}>\n                <div>\n                    <DemoButton onChangeLang={this.handleChangeLang} />\n                    <Popconfirm\n                        trigger=\"click\"\n                        placement=\"right\"\n                        content={lang.PopconfirmContent.content}>\n                        <Button colors=\"primary\">{lang.PopconfirmContent.buttonText}</Button>\n                    </Popconfirm>\n                </div>\n\n            </Locale>\n        )\n    }\n}\n\n", "desc": " Locale组件通过context传递语言包，子组件通过contextTypes获取context上的beeLocale语言包对象。" }];
+	var Demo1 = __webpack_require__(105);var Demo2 = __webpack_require__(133);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 多语组件设置组件的语言", "code": "/**\n *\n * @title 多语组件设置组件的语言\n * @description 按照固定的格式传入语言对象，会自动改变组件内默认文字的语言。\n *\n */\n\nimport React, {Component} from 'react';\nimport { Locale, Button, Popconfirm } from 'tinper-bee';\nimport En from \"tinper-bee/lib/en_US\";;\n\nclass Demo1 extends Component {\n    render() {\n        let content = 'Do yon like me?';\n        return (\n            <Locale locale={En}>\n                <Popconfirm\n                    trigger=\"click\"\n                    placement=\"right\"\n                    content={content}>\n                    <Button colors=\"primary\">see right!</Button>\n                </Popconfirm>\n            </Locale>\n        )\n    }\n}\n\n", "desc": " 按照固定的格式传入语言对象，会自动改变组件内默认文字的语言。" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 项目中使用，及切换语言", "code": "/**\n *\n * @title 项目中使用，及切换语言\n * @description Locale组件通过context传递语言包，子组件通过contextTypes获取context上的beeLocale语言包对象。\n *\n */\n\nimport React, {Component} from 'react';\nimport { Locale, Button, Popconfirm } from 'tinper-bee';\nimport PropTypes from 'prop-types';\nimport ZhCn from \"tinper-bee/lib/zh-cn\";;\nimport En from \"tinper-bee/lib/en_US\";;\n\nclass DemoButton extends Component{\n    render() {\n       let localeText = this.context.beeLocale.DemoButton.text;\n        return (\n            <div style={{ marginBottom: 20}}>\n                <Button onClick={this.props.onChangeLang} colors=\"primary\">\n                    {localeText}\n                </Button>\n            </div>\n\n        )\n    }\n}\nDemoButton.contextTypes = {\n    beeLocale: PropTypes.object\n}\n\nlet en = {\n    ...En,\n    DemoButton: {\n        text: 'Change Language'\n    },\n    PopconfirmContent: {\n       content: 'Do you like tinper-bee UI library?' ,\n        buttonText: 'see right'\n    }\n};\n\nlet zhCn = {\n    ...ZhCn,\n    DemoButton: {\n        text: '切换语言'\n    },\n    PopconfirmContent: {\n        content: '你喜欢tinper-bee组件库吗？' ,\n        buttonText: '看右边'\n    }\n};\n\n\n\nclass Demo1 extends Component {\n    state = {\n        lang: zhCn\n    }\n    handleChangeLang = () => {\n        let { lang } = this.state;\n        if(lang.lang === 'zh-cn'){\n            this.setState({\n                lang: en\n            })\n        }else{\n            this.setState({\n                lang: zhCn\n            })\n        }\n\n    }\n    render() {\n        let { lang } = this.state;\n\n        return (\n            <Locale locale={lang}>\n                <div>\n                    <DemoButton onChangeLang={this.handleChangeLang} />\n                    <Popconfirm\n                        trigger=\"click\"\n                        placement=\"right\"\n                        content={lang.PopconfirmContent.content}>\n                        <Button colors=\"primary\">{lang.PopconfirmContent.buttonText}</Button>\n                    </Popconfirm>\n                </div>\n\n            </Locale>\n        )\n    }\n}\n\n", "desc": " Locale组件通过context传递语言包，子组件通过contextTypes获取context上的beeLocale语言包对象。" }];
 	
 	var Demo = function (_Component) {
 	    _inherits(Demo, _Component);
@@ -106,16 +102,22 @@
 	            title = _props.title,
 	            example = _props.example,
 	            code = _props.code,
-	            desc = _props.desc;
+	            desc = _props.desc,
+	            scss_code = _props.scss_code;
 	
 	        var caret = this.state.open ? CARETUP : CARET;
 	        var text = this.state.open ? "隐藏代码" : "查看代码";
 	
-	        var footer = _react2['default'].createElement(
-	            _beeButton2['default'],
-	            { shape: 'block', onClick: this.handleClick },
-	            caret,
-	            text
+	        var header = _react2['default'].createElement(
+	            'div',
+	            null,
+	            example,
+	            _react2['default'].createElement(
+	                _beeButton2['default'],
+	                { style: { "marginTop": "10px" }, shape: 'block', onClick: this.handleClick },
+	                caret,
+	                text
+	            )
 	        );
 	        return _react2['default'].createElement(
 	            _beeLayout.Col,
@@ -132,7 +134,7 @@
 	            ),
 	            _react2['default'].createElement(
 	                _beePanel.Panel,
-	                { collapsible: true, headerContent: true, expanded: this.state.open, colors: 'bordered', header: example, footer: footer, footerStyle: { padding: 0 } },
+	                { collapsible: true, headerContent: true, expanded: this.state.open, colors: 'bordered', header: header, footerStyle: { padding: 0 } },
 	                _react2['default'].createElement(
 	                    'pre',
 	                    null,
@@ -141,7 +143,16 @@
 	                        { className: 'hljs javascript' },
 	                        code
 	                    )
-	                )
+	                ),
+	                !!scss_code ? _react2['default'].createElement(
+	                    'pre',
+	                    null,
+	                    _react2['default'].createElement(
+	                        'code',
+	                        { className: 'hljs css' },
+	                        scss_code
+	                    )
+	                ) : null
 	            )
 	        );
 	    };
@@ -164,7 +175,7 @@
 	            null,
 	            DemoArray.map(function (child, index) {
 	
-	                return _react2['default'].createElement(Demo, { example: child.example, title: child.title, code: child.code, desc: child.desc, key: index });
+	                return _react2['default'].createElement(Demo, { example: child.example, title: child.title, code: child.code, scss_code: child.scss_code, desc: child.desc, key: index });
 	            })
 	        );
 	    };
@@ -565,7 +576,7 @@
 	  /**
 	   * You can use a custom element for this component
 	   */
-	  componentClass: _propTypes2["default"].oneOf([_propTypes2["default"].element, _propTypes2["default"].string])
+	  componentClass: _propTypes2["default"].oneOfType([_propTypes2["default"].element, _propTypes2["default"].string])
 	};
 	
 	var defaultProps = {
@@ -7795,10 +7806,90 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _react = __webpack_require__(4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _src = __webpack_require__(106);
+	
+	var _src2 = _interopRequireDefault(_src);
+	
+	var _beePopconfirm = __webpack_require__(109);
+	
+	var _beePopconfirm2 = _interopRequireDefault(_beePopconfirm);
+	
+	var _beeButton = __webpack_require__(103);
+	
+	var _beeButton2 = _interopRequireDefault(_beeButton);
+	
+	var _en_US = __webpack_require__(132);
+	
+	var _en_US2 = _interopRequireDefault(_en_US);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @title 多语组件设置组件的语言
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description 按照固定的格式传入语言对象，会自动改变组件内默认文字的语言。
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	var Demo1 = function (_Component) {
+	    _inherits(Demo1, _Component);
+	
+	    function Demo1() {
+	        _classCallCheck(this, Demo1);
+	
+	        return _possibleConstructorReturn(this, _Component.apply(this, arguments));
+	    }
+	
+	    Demo1.prototype.render = function render() {
+	        var content = 'Do yon like me?';
+	        return _react2['default'].createElement(
+	            _src2['default'],
+	            { locale: _en_US2['default'] },
+	            _react2['default'].createElement(
+	                _beePopconfirm2['default'],
+	                {
+	                    trigger: 'click',
+	                    placement: 'right',
+	                    content: content },
+	                _react2['default'].createElement(
+	                    _beeButton2['default'],
+	                    { colors: 'primary' },
+	                    'see right!'
+	                )
+	            )
+	        );
+	    };
+	
+	    return Demo1;
+	}(_react.Component);
+	
+	exports['default'] = Demo1;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 106 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	
-	var _Locale = __webpack_require__(106);
+	var _Locale = __webpack_require__(107);
 	
 	var _Locale2 = _interopRequireDefault(_Locale);
 
@@ -7808,7 +7899,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -7827,7 +7918,7 @@
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
-	var _zhCn = __webpack_require__(107);
+	var _zhCn = __webpack_require__(108);
 	
 	var _zhCn2 = _interopRequireDefault(_zhCn);
 	
@@ -7886,7 +7977,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 107 */
+/* 108 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -7907,86 +7998,6 @@
 	        copy: '复制'
 	    }
 	};
-	module.exports = exports['default'];
-
-/***/ }),
-/* 108 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _react = __webpack_require__(4);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _src = __webpack_require__(105);
-	
-	var _src2 = _interopRequireDefault(_src);
-	
-	var _beePopconfirm = __webpack_require__(109);
-	
-	var _beePopconfirm2 = _interopRequireDefault(_beePopconfirm);
-	
-	var _beeButton = __webpack_require__(103);
-	
-	var _beeButton2 = _interopRequireDefault(_beeButton);
-	
-	var _en_US = __webpack_require__(134);
-	
-	var _en_US2 = _interopRequireDefault(_en_US);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-	
-	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @title 多语组件设置组件的语言
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description 按照固定的格式传入语言对象，会自动改变组件内默认文字的语言。
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
-	
-	var Demo1 = function (_Component) {
-	    _inherits(Demo1, _Component);
-	
-	    function Demo1() {
-	        _classCallCheck(this, Demo1);
-	
-	        return _possibleConstructorReturn(this, _Component.apply(this, arguments));
-	    }
-	
-	    Demo1.prototype.render = function render() {
-	        var content = 'Do yon like me?';
-	        return _react2['default'].createElement(
-	            _src2['default'],
-	            { locale: _en_US2['default'] },
-	            _react2['default'].createElement(
-	                _beePopconfirm2['default'],
-	                {
-	                    trigger: 'click',
-	                    placement: 'right',
-	                    content: content },
-	                _react2['default'].createElement(
-	                    _beeButton2['default'],
-	                    { colors: 'primary' },
-	                    'see right!'
-	                )
-	            )
-	        );
-	    };
-	
-	    return Demo1;
-	}(_react.Component);
-	
-	exports['default'] = Demo1;
 	module.exports = exports['default'];
 
 /***/ }),
@@ -8050,7 +8061,7 @@
 	
 	var _Portal2 = _interopRequireDefault(_Portal);
 	
-	var _Confirm = __webpack_require__(131);
+	var _Confirm = __webpack_require__(129);
 	
 	var _Confirm2 = _interopRequireDefault(_Confirm);
 	
@@ -8285,7 +8296,7 @@
 	
 	var _tinperBeeCore = __webpack_require__(26);
 	
-	var _Fade = __webpack_require__(129);
+	var _Fade = __webpack_require__(101);
 	
 	var _Fade2 = _interopRequireDefault(_Fade);
 	
@@ -8950,7 +8961,7 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -8998,33 +9009,33 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
 	
 	var propTypes = {
-	    /**
-	     * 要设置定位的元素
-	     */
-	    target: _propTypes2["default"].oneOfType([_tinperBeeCore.componentOrElement, _propTypes2["default"].func]),
+	  /**
+	   * 要设置定位的元素
+	   */
+	  target: _propTypes2["default"].oneOfType([_tinperBeeCore.componentOrElement, _propTypes2["default"].func]),
 	
-	    /**
-	     * 存放的容器元素
-	     */
-	    container: _propTypes2["default"].oneOfType([_tinperBeeCore.componentOrElement, _propTypes2["default"].func]),
-	    /**
-	     * 容器padding值
-	     */
-	    containerPadding: _propTypes2["default"].number,
-	    /**
-	     * 位置设置
-	     */
-	    placement: _propTypes2["default"].oneOf(['top', 'right', 'bottom', 'left']),
-	    /**
-	     * 是否需要更新位置
-	     */
-	    shouldUpdatePosition: _propTypes2["default"].bool
+	  /**
+	   * 存放的容器元素
+	   */
+	  container: _propTypes2["default"].oneOfType([_tinperBeeCore.componentOrElement, _propTypes2["default"].func]),
+	  /**
+	   * 容器padding值
+	   */
+	  containerPadding: _propTypes2["default"].number,
+	  /**
+	   * 位置设置
+	   */
+	  placement: _propTypes2["default"].oneOf(['top', 'right', 'bottom', 'left']),
+	  /**
+	   * 是否需要更新位置
+	   */
+	  shouldUpdatePosition: _propTypes2["default"].bool
 	};
 	
 	var defaultProps = {
-	    containerPadding: 0,
-	    placement: 'right',
-	    shouldUpdatePosition: false
+	  containerPadding: 0,
+	  placement: 'right',
+	  shouldUpdatePosition: false
 	};
 	
 	/**
@@ -9032,125 +9043,123 @@
 	 */
 	
 	var Position = function (_Component) {
-	    _inherits(Position, _Component);
+	  _inherits(Position, _Component);
 	
-	    function Position(props, context) {
-	        _classCallCheck(this, Position);
+	  function Position(props, context) {
+	    _classCallCheck(this, Position);
 	
-	        var _this = _possibleConstructorReturn(this, _Component.call(this, props, context));
+	    var _this = _possibleConstructorReturn(this, _Component.call(this, props, context));
 	
-	        _this.state = {
-	            positionLeft: 0,
-	            positionTop: 0,
-	            arrowOffsetLeft: null,
-	            arrowOffsetTop: null
-	        };
+	    _this.state = {
+	      positionLeft: 0,
+	      positionTop: 0,
+	      arrowOffsetLeft: null,
+	      arrowOffsetTop: null
+	    };
 	
-	        _this.needsFlush = false;
-	        _this.lastTarget = null;
+	    _this.needsFlush = false;
+	    _this.lastTarget = null;
 	
-	        _this.getTarget = _this.getTarget.bind(_this);
-	        _this.maybeUpdatePosition = _this.maybeUpdatePosition.bind(_this);
-	        _this.updatePosition = _this.updatePosition.bind(_this);
-	        return _this;
+	    _this.getTarget = _this.getTarget.bind(_this);
+	    _this.maybeUpdatePosition = _this.maybeUpdatePosition.bind(_this);
+	    _this.updatePosition = _this.updatePosition.bind(_this);
+	    return _this;
+	  }
+	
+	  Position.prototype.componentDidMount = function componentDidMount() {
+	    this.updatePosition(this.getTarget());
+	  };
+	
+	  Position.prototype.componentWillReceiveProps = function componentWillReceiveProps() {
+	    this.needsFlush = true;
+	  };
+	
+	  Position.prototype.componentDidUpdate = function componentDidUpdate(prevProps) {
+	    if (this.needsFlush) {
+	      this.needsFlush = false;
+	
+	      this.maybeUpdatePosition();
+	    }
+	  };
+	  /**
+	   * 获取要设置位置的子元素
+	   */
+	
+	
+	  Position.prototype.getTarget = function getTarget() {
+	    var target = this.props.target;
+	
+	    var targetElement = typeof target === 'function' ? target() : target;
+	    return targetElement && _reactDom2["default"].findDOMNode(targetElement) || null;
+	  };
+	
+	  /**
+	   * 验证是否需要更新位置
+	   */
+	
+	
+	  Position.prototype.maybeUpdatePosition = function maybeUpdatePosition(placementChanged) {
+	    var target = this.getTarget();
+	    if (!this.props.shouldUpdatePosition && target === this.lastTarget && !placementChanged) {
+	      return;
 	    }
 	
-	    Position.prototype.componentDidMount = function componentDidMount() {
-	        this.updatePosition(this.getTarget());
-	    };
+	    this.updatePosition(target);
+	  };
+	  /**
+	   * 更新位置
+	   */
 	
-	    Position.prototype.componentWillReceiveProps = function componentWillReceiveProps() {
-	        this.needsFlush = true;
-	    };
+	  Position.prototype.updatePosition = function updatePosition(target) {
+	    this.lastTarget = target;
 	
-	    Position.prototype.componentDidUpdate = function componentDidUpdate(prevProps) {
-	        if (this.needsFlush) {
-	            this.needsFlush = false;
+	    if (!target) {
+	      this.setState({
+	        positionLeft: 0,
+	        positionTop: 0,
+	        arrowOffsetLeft: null,
+	        arrowOffsetTop: null
+	      });
 	
-	            this.maybeUpdatePosition();
-	        }
-	    };
+	      return;
+	    }
 	
-	    /**
-	     * 获取要设置位置的子元素
-	     */
+	    var overlay = _reactDom2["default"].findDOMNode(this);
+	    var container = (0, _getContainer2["default"])(this.props.container, (0, _ownerDocument2["default"])(this).body);
 	
+	    this.setState((0, _calculatePosition2["default"])(this.props.placement, overlay, target, container, this.props.containerPadding));
+	  };
 	
-	    Position.prototype.getTarget = function getTarget() {
-	        var target = this.props.target;
+	  Position.prototype.render = function render() {
+	    var _props = this.props,
+	        children = _props.children,
+	        className = _props.className,
+	        props = _objectWithoutProperties(_props, ['children', 'className']);
 	
-	        var targetElement = typeof target === 'function' ? target() : target;
-	        return targetElement && _reactDom2["default"].findDOMNode(targetElement) || null;
-	    };
+	    var _state = this.state,
+	        positionLeft = _state.positionLeft,
+	        positionTop = _state.positionTop,
+	        arrowPosition = _objectWithoutProperties(_state, ['positionLeft', 'positionTop']);
 	
-	    /**
-	     * 验证是否需要更新位置
-	     */
-	
-	
-	    Position.prototype.maybeUpdatePosition = function maybeUpdatePosition(placementChanged) {
-	        var target = this.getTarget();
-	        if (!this.props.shouldUpdatePosition && target === this.lastTarget && !placementChanged) {
-	            return;
-	        }
-	
-	        this.updatePosition(target);
-	    };
-	
-	    /**
-	     * 更新位置
-	     */
-	
-	    Position.prototype.updatePosition = function updatePosition(target) {
-	        this.lastTarget = target;
-	
-	        if (!target) {
-	            this.setState({
-	                positionLeft: 0,
-	                positionTop: 0,
-	                arrowOffsetLeft: null,
-	                arrowOffsetTop: null
-	            });
-	
-	            return;
-	        }
-	
-	        var overlay = _reactDom2["default"].findDOMNode(this);
-	        var container = (0, _getContainer2["default"])(this.props.container, (0, _ownerDocument2["default"])(this).body);
-	
-	        this.setState((0, _calculatePosition2["default"])(this.props.placement, overlay, target, container, this.props.containerPadding));
-	    };
-	
-	    Position.prototype.render = function render() {
-	        var _props = this.props,
-	            children = _props.children,
-	            className = _props.className,
-	            props = _objectWithoutProperties(_props, ['children', 'className']);
-	
-	        var _state = this.state,
-	            positionLeft = _state.positionLeft,
-	            positionTop = _state.positionTop,
-	            arrowPosition = _objectWithoutProperties(_state, ['positionLeft', 'positionTop']);
-	
-	        // These should not be forwarded to the child.
+	    // These should not be forwarded to the child.
 	
 	
-	        delete props.target;
-	        delete props.container;
-	        delete props.containerPadding;
-	        delete props.shouldUpdatePosition;
+	    delete props.target;
+	    delete props.container;
+	    delete props.containerPadding;
+	    delete props.shouldUpdatePosition;
 	
-	        var child = _react2["default"].Children.only(children);
-	        return (0, _react.cloneElement)(child, {
-	            className: (0, _classnames2["default"])(className, child.props.className),
-	            style: _extends({}, child.props.style, {
-	                left: positionLeft,
-	                top: positionTop
-	            })
-	        });
-	    };
+	    var child = _react2["default"].Children.only(children);
+	    return (0, _react.cloneElement)(child, {
+	      className: (0, _classnames2["default"])(className, child.props.className),
+	      style: _extends({}, child.props.style, {
+	        left: positionLeft,
+	        top: positionTop
+	      })
+	    });
+	  };
 	
-	    return Position;
+	  return Position;
 	}(_react.Component);
 	
 	Position.propTypes = propTypes;
@@ -9166,7 +9175,7 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
 	exports["default"] = calculatePosition;
 	
@@ -9189,117 +9198,105 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 	
 	function getContainerDimensions(containerNode) {
-	    var width = void 0,
-	        height = void 0,
-	        scroll = void 0;
+	  var width = void 0,
+	      height = void 0,
+	      scroll = void 0;
 	
-	    if (containerNode.tagName === 'BODY') {
-	        width = window.innerWidth;
-	        height = window.innerHeight;
+	  if (containerNode.tagName === 'BODY') {
+	    width = window.innerWidth;
+	    height = window.innerHeight;
 	
-	        scroll = (0, _scrollTop2["default"])((0, _ownerDocument2["default"])(containerNode).documentElement) || (0, _scrollTop2["default"])(containerNode);
-	    } else {
-	        var _getOffset = (0, _offset2["default"])(containerNode);
+	    scroll = (0, _scrollTop2["default"])((0, _ownerDocument2["default"])(containerNode).documentElement) || (0, _scrollTop2["default"])(containerNode);
+	  } else {
+	    var _getOffset = (0, _offset2["default"])(containerNode);
 	
-	        width = _getOffset.width;
-	        height = _getOffset.height;
+	    width = _getOffset.width;
+	    height = _getOffset.height;
 	
-	        scroll = (0, _scrollTop2["default"])(containerNode);
-	    }
+	    scroll = (0, _scrollTop2["default"])(containerNode);
+	  }
 	
-	    return { width: width, height: height, scroll: scroll };
+	  return { width: width, height: height, scroll: scroll };
 	}
 	
 	function getTopDelta(top, overlayHeight, container, padding) {
-	    var containerDimensions = getContainerDimensions(container);
-	    var containerScroll = containerDimensions.scroll;
-	    var containerHeight = containerDimensions.height;
+	  var containerDimensions = getContainerDimensions(container);
+	  var containerScroll = containerDimensions.scroll;
+	  var containerHeight = containerDimensions.height;
 	
-	    var topEdgeOffset = top - padding - containerScroll;
-	    var bottomEdgeOffset = top + padding - containerScroll + overlayHeight;
+	  var topEdgeOffset = top - padding - containerScroll;
+	  var bottomEdgeOffset = top + padding - containerScroll + overlayHeight;
 	
-	    if (topEdgeOffset < 0) {
-	        return -topEdgeOffset;
-	    } else if (bottomEdgeOffset > containerHeight) {
-	        return containerHeight - bottomEdgeOffset;
-	    } else {
-	        return 0;
-	    }
+	  if (topEdgeOffset < 0) {
+	    return -topEdgeOffset;
+	  } else if (bottomEdgeOffset > containerHeight) {
+	    return containerHeight - bottomEdgeOffset;
+	  } else {
+	    return 0;
+	  }
 	}
 	
 	function getLeftDelta(left, overlayWidth, container, padding) {
-	    var containerDimensions = getContainerDimensions(container);
-	    var containerWidth = containerDimensions.width;
+	  var containerDimensions = getContainerDimensions(container);
+	  var containerWidth = containerDimensions.width;
 	
-	    var leftEdgeOffset = left - padding;
-	    var rightEdgeOffset = left + padding + overlayWidth;
+	  var leftEdgeOffset = left - padding;
+	  var rightEdgeOffset = left + padding + overlayWidth;
 	
-	    if (leftEdgeOffset < 0) {
-	        return -leftEdgeOffset;
-	    } else if (rightEdgeOffset > containerWidth) {
-	        return containerWidth - rightEdgeOffset;
-	    }
+	  if (leftEdgeOffset < 0) {
+	    return -leftEdgeOffset;
+	  } else if (rightEdgeOffset > containerWidth) {
+	    return containerWidth - rightEdgeOffset;
+	  }
 	
-	    return 0;
+	  return 0;
 	}
 	
 	function calculatePosition(placement, overlayNode, target, container, padding) {
-	    var childOffset = container.tagName === 'BODY' ? (0, _offset2["default"])(target) : (0, _position2["default"])(target, container);
+	  var childOffset = container.tagName === 'BODY' ? (0, _offset2["default"])(target) : (0, _position2["default"])(target, container);
 	
-	    var _getOffset2 = (0, _offset2["default"])(overlayNode),
-	        overlayHeight = _getOffset2.height,
-	        overlayWidth = _getOffset2.width;
+	  var _getOffset2 = (0, _offset2["default"])(overlayNode),
+	      overlayHeight = _getOffset2.height,
+	      overlayWidth = _getOffset2.width;
 	
-	    var positionLeft = void 0,
-	        positionTop = void 0,
-	        arrowOffsetLeft = void 0,
-	        arrowOffsetTop = void 0;
+	  var positionLeft = void 0,
+	      positionTop = void 0,
+	      arrowOffsetLeft = void 0,
+	      arrowOffsetTop = void 0;
 	
-	    if (/^left|^right/.test(placement)) {
-	        positionTop = childOffset.top + (childOffset.height - overlayHeight) / 2;
+	  if (placement === 'left' || placement === 'right') {
+	    positionTop = childOffset.top + (childOffset.height - overlayHeight) / 2;
 	
-	        if (/left/.test(placement)) {
-	            positionLeft = childOffset.left - overlayWidth;
-	        } else {
-	            positionLeft = childOffset.left + childOffset.width;
-	        }
-	
-	        if (/Top/.test(placement)) {
-	            positionTop = childOffset.top;
-	        } else if (/Bottom/.test(placement)) {
-	            positionTop = childOffset.top + childOffset.height - overlayHeight;
-	        }
-	
-	        var topDelta = getTopDelta(positionTop, overlayHeight, container, padding);
-	
-	        positionTop += topDelta;
-	        arrowOffsetTop = 50 * (1 - 2 * topDelta / overlayHeight) + '%';
-	        arrowOffsetLeft = void 0;
-	    } else if (/^top|^bottom/.test(placement)) {
-	        positionLeft = childOffset.left + (childOffset.width - overlayWidth) / 2;
-	
-	        if (/top/.test(placement)) {
-	            positionTop = childOffset.top - overlayHeight;
-	        } else {
-	            positionTop = childOffset.top + childOffset.height;
-	        }
-	
-	        if (/Left/.test(placement)) {
-	            positionLeft = childOffset.left;
-	        } else if (/Right/.test(placement)) {
-	            positionLeft = childOffset.left + (childOffset.width - overlayWidth);
-	        }
-	
-	        var leftDelta = getLeftDelta(positionLeft, overlayWidth, container, padding);
-	
-	        positionLeft += leftDelta;
-	        arrowOffsetLeft = 50 * (1 - 2 * leftDelta / overlayWidth) + '%';
-	        arrowOffsetTop = void 0;
+	    if (placement === 'left') {
+	      positionLeft = childOffset.left - overlayWidth;
 	    } else {
-	        throw new Error('calcOverlayPosition(): No such placement of "' + placement + '" found.');
+	      positionLeft = childOffset.left + childOffset.width;
 	    }
 	
-	    return { positionLeft: positionLeft, positionTop: positionTop, arrowOffsetLeft: arrowOffsetLeft, arrowOffsetTop: arrowOffsetTop };
+	    var topDelta = getTopDelta(positionTop, overlayHeight, container, padding);
+	
+	    positionTop += topDelta;
+	    arrowOffsetTop = 50 * (1 - 2 * topDelta / overlayHeight) + '%';
+	    arrowOffsetLeft = void 0;
+	  } else if (placement === 'top' || placement === 'bottom') {
+	    positionLeft = childOffset.left + (childOffset.width - overlayWidth) / 2;
+	
+	    if (placement === 'top') {
+	      positionTop = childOffset.top - overlayHeight;
+	    } else {
+	      positionTop = childOffset.top + childOffset.height;
+	    }
+	
+	    var leftDelta = getLeftDelta(positionLeft, overlayWidth, container, padding);
+	
+	    positionLeft += leftDelta;
+	    arrowOffsetLeft = 50 * (1 - 2 * leftDelta / overlayWidth) + '%';
+	    arrowOffsetTop = void 0;
+	  } else {
+	    throw new Error('calcOverlayPosition(): No such placement of "' + placement + '" found.');
+	  }
+	
+	  return { positionLeft: positionLeft, positionTop: positionTop, arrowOffsetLeft: arrowOffsetLeft, arrowOffsetTop: arrowOffsetTop };
 	}
 	module.exports = exports['default'];
 
@@ -9793,476 +9790,6 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _classnames = __webpack_require__(3);
-	
-	var _classnames2 = _interopRequireDefault(_classnames);
-	
-	var _propTypes = __webpack_require__(5);
-	
-	var _propTypes2 = _interopRequireDefault(_propTypes);
-	
-	var _react = __webpack_require__(4);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _Transition = __webpack_require__(130);
-	
-	var _Transition2 = _interopRequireDefault(_Transition);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-	
-	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
-	
-	var propTypes = {
-	  /**
-	   * Show the component; triggers the fade in or fade out animation
-	   */
-	  "in": _propTypes2["default"].bool,
-	
-	  /**
-	   * Unmount the component (remove it from the DOM) when it is faded out
-	   */
-	  unmountOnExit: _propTypes2["default"].bool,
-	
-	  /**
-	   * Run the fade in animation when the component mounts, if it is initially
-	   * shown
-	   */
-	  transitionAppear: _propTypes2["default"].bool,
-	
-	  /**
-	   * Duration of the fade animation in milliseconds, to ensure that finishing
-	   * callbacks are fired even if the original browser transition end events are
-	   * canceled
-	   */
-	  timeout: _propTypes2["default"].number,
-	
-	  /**
-	   * Callback fired before the component fades in
-	   */
-	  onEnter: _propTypes2["default"].func,
-	  /**
-	   * Callback fired after the component starts to fade in
-	   */
-	  onEntering: _propTypes2["default"].func,
-	  /**
-	   * Callback fired after the has component faded in
-	   */
-	  onEntered: _propTypes2["default"].func,
-	  /**
-	   * Callback fired before the component fades out
-	   */
-	  onExit: _propTypes2["default"].func,
-	  /**
-	   * Callback fired after the component starts to fade out
-	   */
-	  onExiting: _propTypes2["default"].func,
-	  /**
-	   * Callback fired after the component has faded out
-	   */
-	  onExited: _propTypes2["default"].func
-	};
-	
-	var defaultProps = {
-	  "in": false,
-	  timeout: 300,
-	  unmountOnExit: false,
-	  transitionAppear: false
-	};
-	
-	var Fade = function (_React$Component) {
-	  _inherits(Fade, _React$Component);
-	
-	  function Fade() {
-	    _classCallCheck(this, Fade);
-	
-	    return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
-	  }
-	
-	  Fade.prototype.render = function render() {
-	    return _react2["default"].createElement(_Transition2["default"], _extends({}, this.props, {
-	      className: (0, _classnames2["default"])(this.props.className, 'fade'),
-	      enteredClassName: 'in',
-	      enteringClassName: 'in'
-	    }));
-	  };
-	
-	  return Fade;
-	}(_react2["default"].Component);
-	
-	Fade.propTypes = propTypes;
-	Fade.defaultProps = defaultProps;
-	
-	exports["default"] = Fade;
-	module.exports = exports['default'];
-
-/***/ }),
-/* 130 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.EXITING = exports.ENTERED = exports.ENTERING = exports.EXITED = exports.UNMOUNTED = undefined;
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
-	var _react = __webpack_require__(4);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _propTypes = __webpack_require__(5);
-	
-	var _propTypes2 = _interopRequireDefault(_propTypes);
-	
-	var _reactDom = __webpack_require__(12);
-	
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-	
-	var _properties = __webpack_require__(13);
-	
-	var _properties2 = _interopRequireDefault(_properties);
-	
-	var _on = __webpack_require__(15);
-	
-	var _on2 = _interopRequireDefault(_on);
-	
-	var _classnames = __webpack_require__(3);
-	
-	var _classnames2 = _interopRequireDefault(_classnames);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-	
-	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
-	
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
-	
-	var transitionEndEvent = _properties2["default"].end;
-	
-	//设置状态码
-	var UNMOUNTED = exports.UNMOUNTED = 0;
-	var EXITED = exports.EXITED = 1;
-	var ENTERING = exports.ENTERING = 2;
-	var ENTERED = exports.ENTERED = 3;
-	var EXITING = exports.EXITING = 4;
-	
-	var propTypes = {
-	  /**
-	   * 是否触发动画
-	   */
-	  "in": _propTypes2["default"].bool,
-	
-	  /**
-	   * 不显示的时候是否移除组件
-	   */
-	  unmountOnExit: _propTypes2["default"].bool,
-	
-	  /**
-	   * 如果设置为默认显示，挂载时显示动画
-	   */
-	  transitionAppear: _propTypes2["default"].bool,
-	
-	  /**
-	   * 设置超时时间，防止出现问题，可设置为>=动画时间
-	   */
-	  timeout: _propTypes2["default"].number,
-	
-	  /**
-	   * 退出组件时添加的class
-	   */
-	  exitedClassName: _propTypes2["default"].string,
-	  /**
-	   * 退出组件中添加的class
-	   */
-	  exitingClassName: _propTypes2["default"].string,
-	  /**
-	   * 进入动画后添加的class
-	   */
-	  enteredClassName: _propTypes2["default"].string,
-	  /**
-	   * 进入动画时添加的class
-	   */
-	  enteringClassName: _propTypes2["default"].string,
-	
-	  /**
-	   * 进入动画开始时的钩子函数
-	   */
-	  onEnter: _propTypes2["default"].func,
-	  /**
-	   * 进入动画中的钩子函数
-	   */
-	  onEntering: _propTypes2["default"].func,
-	  /**
-	   * 进入动画后的钩子函数
-	   */
-	  onEntered: _propTypes2["default"].func,
-	  /**
-	   * 退出动画开始时的钩子函数
-	   */
-	  onExit: _propTypes2["default"].func,
-	  /**
-	   * 退出动画中的钩子函数
-	   */
-	  onExiting: _propTypes2["default"].func,
-	  /**
-	   * 退出动画后的钩子函数
-	   */
-	  onExited: _propTypes2["default"].func
-	};
-	
-	function noop() {}
-	
-	var defaultProps = {
-	  "in": false,
-	  unmountOnExit: false,
-	  transitionAppear: false,
-	  timeout: 5000,
-	  onEnter: noop,
-	  onEntering: noop,
-	  onEntered: noop,
-	  onExit: noop,
-	  onExiting: noop,
-	  onExited: noop
-	};
-	
-	/**
-	 * 动画组件
-	 */
-	
-	var Transition = function (_Component) {
-	  _inherits(Transition, _Component);
-	
-	  function Transition(props, context) {
-	    _classCallCheck(this, Transition);
-	
-	    var _this = _possibleConstructorReturn(this, _Component.call(this, props, context));
-	
-	    var initialStatus = void 0;
-	    if (props["in"]) {
-	      // 在componentdidmount时开始执行动画
-	      initialStatus = props.transitionAppear ? EXITED : ENTERED;
-	    } else {
-	      initialStatus = props.unmountOnExit ? UNMOUNTED : EXITED;
-	    }
-	    _this.state = { status: initialStatus };
-	
-	    _this.nextCallback = null;
-	
-	    _this.performEnter = _this.performEnter.bind(_this);
-	    _this.performExit = _this.performExit.bind(_this);
-	    _this.cancelNextCallback = _this.cancelNextCallback.bind(_this);
-	    _this.onTransitionEnd = _this.onTransitionEnd.bind(_this);
-	    _this.safeSetState = _this.safeSetState.bind(_this);
-	    _this.setNextCallback = _this.setNextCallback.bind(_this);
-	
-	    return _this;
-	  }
-	
-	  Transition.prototype.componentDidMount = function componentDidMount() {
-	    if (this.props.transitionAppear && this.props["in"]) {
-	      this.performEnter(this.props);
-	    }
-	  };
-	
-	  Transition.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
-	    if (nextProps["in"] && this.props.unmountOnExit) {
-	      if (this.state.status === UNMOUNTED) {
-	        // 在componentDidUpdate执行动画.
-	        this.setState({ status: EXITED });
-	      }
-	    } else {
-	      this._needsUpdate = true;
-	    }
-	  };
-	
-	  Transition.prototype.componentDidUpdate = function componentDidUpdate() {
-	    var status = this.state.status;
-	
-	    if (this.props.unmountOnExit && status === EXITED) {
-	      // 当使用unmountOnExit时，exited为exiting和unmont的过渡状态
-	      if (this.props["in"]) {
-	        this.performEnter(this.props);
-	      } else {
-	        this.setState({ status: UNMOUNTED });
-	      }
-	
-	      return;
-	    }
-	
-	    // 确保只响应prop变化
-	    if (this._needsUpdate) {
-	      this._needsUpdate = false;
-	
-	      if (this.props["in"]) {
-	        if (status === EXITING) {
-	          this.performEnter(this.props);
-	        } else if (status === EXITED) {
-	          this.performEnter(this.props);
-	        }
-	        // 其他，当我们已经输入或输出
-	      } else {
-	        if (status === ENTERING || status === ENTERED) {
-	          this.performExit(this.props);
-	        }
-	        // 我们已经输入或输出完成
-	      }
-	    }
-	  };
-	
-	  Transition.prototype.componentWillUnmount = function componentWillUnmount() {
-	    this.cancelNextCallback();
-	  };
-	
-	  Transition.prototype.performEnter = function performEnter(props) {
-	    var _this2 = this;
-	
-	    this.cancelNextCallback();
-	    var node = _reactDom2["default"].findDOMNode(this);
-	
-	    // 这里接收新props
-	    props.onEnter(node);
-	
-	    this.safeSetState({ status: ENTERING }, function () {
-	      _this2.props.onEntering(node);
-	
-	      _this2.onTransitionEnd(node, function () {
-	        _this2.safeSetState({ status: ENTERED }, function () {
-	          _this2.props.onEntered(node);
-	        });
-	      });
-	    });
-	  };
-	
-	  Transition.prototype.performExit = function performExit(props) {
-	    var _this3 = this;
-	
-	    this.cancelNextCallback();
-	    var node = _reactDom2["default"].findDOMNode(this);
-	
-	    props.onExit(node);
-	
-	    this.safeSetState({ status: EXITING }, function () {
-	      _this3.props.onExiting(node);
-	
-	      _this3.onTransitionEnd(node, function () {
-	        _this3.safeSetState({ status: EXITED }, function () {
-	          _this3.props.onExited(node);
-	        });
-	      });
-	    });
-	  };
-	
-	  Transition.prototype.cancelNextCallback = function cancelNextCallback() {
-	    if (this.nextCallback !== null) {
-	      this.nextCallback.cancel();
-	      this.nextCallback = null;
-	    }
-	  };
-	
-	  Transition.prototype.safeSetState = function safeSetState(nextState, callback) {
-	    // 确保在组件销毁后挂起的setState被消除
-	    this.setState(nextState, this.setNextCallback(callback));
-	  };
-	
-	  Transition.prototype.setNextCallback = function setNextCallback(callback) {
-	    var _this4 = this;
-	
-	    var active = true;
-	
-	    this.nextCallback = function (event) {
-	      if (active) {
-	        active = false;
-	        _this4.nextCallback = null;
-	
-	        callback(event);
-	      }
-	    };
-	
-	    this.nextCallback.cancel = function () {
-	      active = false;
-	    };
-	
-	    return this.nextCallback;
-	  };
-	
-	  Transition.prototype.onTransitionEnd = function onTransitionEnd(node, handler) {
-	    this.setNextCallback(handler);
-	
-	    if (node) {
-	      (0, _on2["default"])(node, transitionEndEvent, this.nextCallback);
-	      setTimeout(this.nextCallback, this.props.timeout);
-	    } else {
-	      setTimeout(this.nextCallback, 0);
-	    }
-	  };
-	
-	  Transition.prototype.render = function render() {
-	    var status = this.state.status;
-	    if (status === UNMOUNTED) {
-	      return null;
-	    }
-	
-	    var _props = this.props,
-	        children = _props.children,
-	        className = _props.className,
-	        childProps = _objectWithoutProperties(_props, ['children', 'className']);
-	
-	    Object.keys(Transition.propTypes).forEach(function (key) {
-	      return delete childProps[key];
-	    });
-	
-	    var transitionClassName = void 0;
-	    if (status === EXITED) {
-	      transitionClassName = this.props.exitedClassName;
-	    } else if (status === ENTERING) {
-	      transitionClassName = this.props.enteringClassName;
-	    } else if (status === ENTERED) {
-	      transitionClassName = this.props.enteredClassName;
-	    } else if (status === EXITING) {
-	      transitionClassName = this.props.exitingClassName;
-	    }
-	
-	    var child = _react2["default"].Children.only(children);
-	    return _react2["default"].cloneElement(child, _extends({}, childProps, {
-	      className: (0, _classnames2["default"])(child.props.className, className, transitionClassName)
-	    }));
-	  };
-	
-	  return Transition;
-	}(_react.Component);
-	
-	Transition.propTypes = propTypes;
-	
-	Transition.defaultProps = defaultProps;
-	
-	exports["default"] = Transition;
-
-/***/ }),
-/* 131 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 	
@@ -10276,7 +9803,7 @@
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
-	var _i18n = __webpack_require__(132);
+	var _i18n = __webpack_require__(130);
 	
 	var _i18n2 = _interopRequireDefault(_i18n);
 	
@@ -10288,7 +9815,7 @@
 	
 	var _propTypes2 = _interopRequireDefault(_propTypes);
 	
-	var _tool = __webpack_require__(133);
+	var _tool = __webpack_require__(131);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 	
@@ -10437,7 +9964,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 132 */
+/* 130 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -10454,7 +9981,7 @@
 	};
 
 /***/ }),
-/* 133 */
+/* 131 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -10492,7 +10019,7 @@
 	}
 
 /***/ }),
-/* 134 */
+/* 132 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -10516,7 +10043,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 135 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10531,7 +10058,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _src = __webpack_require__(105);
+	var _src = __webpack_require__(106);
 	
 	var _src2 = _interopRequireDefault(_src);
 	
@@ -10547,11 +10074,11 @@
 	
 	var _beeButton2 = _interopRequireDefault(_beeButton);
 	
-	var _zhCn = __webpack_require__(107);
+	var _zhCn = __webpack_require__(108);
 	
 	var _zhCn2 = _interopRequireDefault(_zhCn);
 	
-	var _en_US = __webpack_require__(134);
+	var _en_US = __webpack_require__(132);
 	
 	var _en_US2 = _interopRequireDefault(_en_US);
 	
