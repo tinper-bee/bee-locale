@@ -1,14 +1,15 @@
-<a name="0.0.3"></a>
-## [0.0.3](https://github.com/tinper-bee/bee-locale/compare/0.0.2...0.0.3) (2017-11-03)
+<a name="0.0.4"></a>
+## 0.0.4 (2018-08-14)
 
 
+### Bug Fixes
 
-<a name="0.0.2"></a>
-## [0.0.2](https://github.com/tinper-bee/bee-locale/compare/dec533c...0.0.2) (2017-11-02)
+* 修改示例 ([6658f50](https://github.com/tinper-bee/bee-locale/commit/6658f50))
 
 
 ### Features
 
+* **bee-locale:** 分页国际化配置 ([2ce1606](https://github.com/tinper-bee/bee-locale/commit/2ce1606))
 * **Locale:** first publish ([dec533c](https://github.com/tinper-bee/bee-locale/commit/dec533c))
 
 
