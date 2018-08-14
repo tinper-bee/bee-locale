@@ -23,6 +23,14 @@ export default {
     },
     Clipboard: {
         copy: '复制'
+    },
+    Pagination:{
+        total: '共',
+        items: '条',
+        show: '显示',
+        goto: '跳至',
+        page: '页',
+        ok: '确认'
     }
 }
 ```
