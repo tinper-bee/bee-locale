@@ -1,5 +1,5 @@
 export default {
-    lang: 'en',
+    lang: 'en_US',
     Popconfirm: {
         ok: 'OK',
         cancel: 'Cancel'

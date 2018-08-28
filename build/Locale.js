@@ -14,9 +14,9 @@ var _propTypes = require('prop-types');
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _zhCn = require('./zh-cn');
+var _zh_CN = require('./zh_CN');
 
-var _zhCn2 = _interopRequireDefault(_zhCn);
+var _zh_CN2 = _interopRequireDefault(_zh_CN);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -32,7 +32,7 @@ var propTypes = {
     locale: _propTypes2["default"].object
 };
 var defaultProps = {
-    locale: _zhCn2["default"]
+    locale: _zh_CN2["default"]
 };
 
 var childContextTypes = {

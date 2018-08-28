@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import zhCN from './zh-cn';
+import zhCN from './zh_CN';
 
 const propTypes = {
     locale: PropTypes.object

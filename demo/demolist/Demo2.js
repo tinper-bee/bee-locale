@@ -10,8 +10,8 @@ import Locale from '../../src';
 import PropTypes from 'prop-types';
 import Popconfirm from 'bee-popconfirm';
 import Button from 'bee-button';
-import ZhCn from "../../src/zh-cn";
-import En from "../../src/en_US";
+import ZhCn from "../../src/zh_CN";
+import EnUS from "../../src/en_US";
 
 class DemoButton extends Component{
     render() {
@@ -31,7 +31,7 @@ DemoButton.contextTypes = {
 }
 
 let en = {
-    ...En,
+    ...EnUS,
     DemoButton: {
         text: 'Change Language'
     },
@@ -41,7 +41,7 @@ let en = {
     }
 };
 
-let zhCn = {
+let zh = {
     ...ZhCn,
     DemoButton: {
         text: '切换语言'
@@ -56,17 +56,17 @@ let zhCn = {
 
 class Demo1 extends Component {
     state = {
-        lang: zhCn
+        lang: zh
     }
     handleChangeLang = () => {
         let { lang } = this.state;
-        if(lang.lang === 'zh-cn'){
+        if(lang.lang === 'zh_CN'){
             this.setState({
                 lang: en
             })
         }else{
             this.setState({
-                lang: zhCn
+                lang: zh
             })
         }
 

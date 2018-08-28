@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports["default"] = {
-    lang: 'en',
+    lang: 'en_US',
     Popconfirm: {
         ok: 'OK',
         cancel: 'Cancel'

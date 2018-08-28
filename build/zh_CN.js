@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports["default"] = {
-    lang: 'zh-cn',
+    lang: 'zh_CN',
     Popconfirm: {
         ok: '确认',
         cancel: '取消'
