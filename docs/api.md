@@ -9,11 +9,11 @@ Locale组件，在使用时，需要将你的App跟组件包裹起来。这样�
 |:---|:-----|:----|:------|
 |locale|设置的语言对象|object|中文语言包|
 
-### 示例 zh-cn.js
+### 示例 zh_CN.js
 
 ```
 export default {
-    lang: 'zh-cn',
+    lang: 'zh_CN',
     Popconfirm: {
         ok: '确认',
         cancel: '取消'

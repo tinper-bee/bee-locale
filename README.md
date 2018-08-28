@@ -26,7 +26,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import Locale from 'bee-locale';
-import zhCn from 'bee-locale/src/zh-cn.js';
+import zhCn from 'bee-locale/src/zh_CN.js';
 
 class App extends Component {
     render() {
@@ -62,7 +62,7 @@ ReactDOM.render( (
 
 ```
 export default {
-    lang: 'zh-cn',
+    lang: 'zh_CN',
     Popconfirm: {
         ok: '确认',
         cancel: '取消'
