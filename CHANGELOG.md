@@ -1,5 +1,15 @@
+<a name="0.0.5"></a>
+## [0.0.5](https://github.com/tinper-bee/bee-locale/compare/v0.0.4...v0.0.5) (2018-08-28)
+
+
+### Bug Fixes
+
+* **bee-local:** 文件名称修改 ([9775bb6](https://github.com/tinper-bee/bee-locale/commit/9775bb6))
+
+
+
 <a name="0.0.4"></a>
-## 0.0.4 (2018-08-14)
+## [0.0.4](https://github.com/tinper-bee/bee-locale/compare/dec533c...v0.0.4) (2018-08-14)
 
 
 ### Bug Fixes
