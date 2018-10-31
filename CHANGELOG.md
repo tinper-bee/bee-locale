@@ -1,3 +1,13 @@
+<a name="0.0.8"></a>
+## [0.0.8](https://github.com/tinper-bee/bee-locale/compare/v0.0.7...v0.0.8) (2018-10-31)
+
+
+### Features
+
+* **bee-locale:** clipboard多语 ([feebbbe](https://github.com/tinper-bee/bee-locale/commit/feebbbe))
+
+
+
 <a name="0.0.7"></a>
 ## [0.0.7](https://github.com/tinper-bee/bee-locale/compare/v0.0.6...v0.0.7) (2018-10-31)
 
