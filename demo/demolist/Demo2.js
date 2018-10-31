@@ -91,7 +91,7 @@ class Demo1 extends Component {
         let { lang } = this.state;
 
         return (
-            <Locale locale={lang}>
+            <Locale locale={}>
                 <div>
                     <DemoButton onChangeLang={this.handleChangeLang} />
                     <Popconfirm

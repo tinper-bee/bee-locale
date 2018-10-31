@@ -13,7 +13,12 @@ exports["default"] = {
         noData: 'no data'
     },
     Clipboard: {
-        copy: 'copy'
+        copy: 'copy',
+        cut: 'cut',
+        copyReady: 'copied',
+        cutReady: 'cut',
+        copyToClipboard: 'copy to clipboard',
+        close: 'close'
     },
     Pagination: {
         total: 'total',

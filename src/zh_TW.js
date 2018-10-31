@@ -8,7 +8,12 @@ export default {
         noData: '無數據'
     },
     Clipboard: {
-        copy: '複製'
+        copy: '複製',
+        cut: '剪切',
+        copyReady: '已複製',
+        cutReady: '已剪切',
+        copyToClipboard:'複製到剪切板',
+        close:'關閉',
     },
     Pagination:{
         total: '共',
