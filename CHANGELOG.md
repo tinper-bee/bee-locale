@@ -1,3 +1,13 @@
+<a name="0.0.9"></a>
+## [0.0.9](https://github.com/tinper-bee/bee-locale/compare/v0.0.8...v0.0.9) (2018-10-31)
+
+
+### Features
+
+* **bee-locale:** 去掉console ([31ff3dd](https://github.com/tinper-bee/bee-locale/commit/31ff3dd))
+
+
+
 <a name="0.0.8"></a>
 ## [0.0.8](https://github.com/tinper-bee/bee-locale/compare/v0.0.7...v0.0.8) (2018-10-31)
 
