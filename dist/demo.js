@@ -76,7 +76,7 @@
 	
 	var CARETUP = _react2['default'].createElement('i', { className: 'uf uf-arrow-up' });
 	
-	var Demo1 = __webpack_require__(67);var Demo2 = __webpack_require__(97);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 多语组件设置组件的语言", "code": "/**\n *\n * @title 多语组件设置组件的语言\n * @description 按照固定的格式传入语言对象，会自动改变组件内默认文字的语言。\n *\n */\n\nimport React, {Component} from 'react';\nimport { Locale, Button, Popconfirm } from 'tinper-bee';\nimport En from \"tinper-bee/lib/en_US\";;\n\nclass Demo1 extends Component {\n    render() {\n        let content = 'Do yon like me?';\n        return (\n            <Locale locale={En}>\n                <Popconfirm\n                    trigger=\"click\"\n                    placement=\"right\"\n                    content={content}>\n                    <Button colors=\"primary\">see right!</Button>\n                </Popconfirm>\n            </Locale>\n        )\n    }\n}\n\n", "desc": " 按照固定的格式传入语言对象，会自动改变组件内默认文字的语言。" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 项目中使用，及切换语言", "code": "/**\n *\n * @title 项目中使用，及切换语言\n * @description Locale组件通过context传递语言包，子组件通过contextTypes获取context上的beeLocale语言包对象。\n *\n */\n\nimport React, {Component} from 'react';\nimport { Locale, Button, Popconfirm } from 'tinper-bee';\nimport PropTypes from 'prop-types';\nimport ZhCn from \"tinper-bee/lib/zh_CN\";;\nimport EnUS from \"tinper-bee/lib/en_US\";;\n\nclass DemoButton extends Component{\n    render() {\n       let localeText = this.context.beeLocale.DemoButton.text;\n        return (\n            <div style={{ marginBottom: 20}}>\n                <Button onClick={this.props.onChangeLang} colors=\"primary\">\n                    {localeText}\n                </Button>\n            </div>\n\n        )\n    }\n}\nDemoButton.contextTypes = {\n    beeLocale: PropTypes.object\n}\n\nlet en = {\n    ...EnUS,\n    DemoButton: {\n        text: 'Change Language'\n    },\n    PopconfirmContent: {\n       content: 'Do you like tinper-bee UI library?' ,\n        buttonText: 'see right'\n    }\n};\n\nlet zh = {\n    ...ZhCn,\n    DemoButton: {\n        text: '切换语言'\n    },\n    PopconfirmContent: {\n        content: '你喜欢tinper-bee组件库吗？' ,\n        buttonText: '看右边'\n    }\n};\n\n\n\nclass Demo1 extends Component {\n    state = {\n        lang: zh\n    }\n    handleChangeLang = () => {\n        let { lang } = this.state;\n        if(lang.lang === 'zh_CN'){\n            this.setState({\n                lang: en\n            })\n        }else{\n            this.setState({\n                lang: zh\n            })\n        }\n\n    }\n    render() {\n        let { lang } = this.state;\n\n        return (\n            <Locale locale={lang}>\n                <div>\n                    <DemoButton onChangeLang={this.handleChangeLang} />\n                    <Popconfirm\n                        trigger=\"click\"\n                        placement=\"right\"\n                        content={lang.PopconfirmContent.content}>\n                        <Button colors=\"primary\">{lang.PopconfirmContent.buttonText}</Button>\n                    </Popconfirm>\n                </div>\n\n            </Locale>\n        )\n    }\n}\n\n", "desc": " Locale组件通过context传递语言包，子组件通过contextTypes获取context上的beeLocale语言包对象。" }];
+	var Demo1 = __webpack_require__(67);var Demo2 = __webpack_require__(97);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 多语组件设置组件的语言", "code": "/**\n *\n * @title 多语组件设置组件的语言\n * @description 按照固定的格式传入语言对象，会自动改变组件内默认文字的语言。\n *\n */\n\nimport React, {Component} from 'react';\nimport { Locale, Button, Popconfirm } from 'tinper-bee';\nimport En from \"tinper-bee/lib/en_US\";;\n\nclass Demo1 extends Component {\n    render() {\n        let content = 'Do yon like me?';\n        return (\n            <Locale locale={En}>\n                <Popconfirm\n                    trigger=\"click\"\n                    placement=\"right\"\n                    content={content}>\n                    <Button colors=\"primary\">see right!</Button>\n                </Popconfirm>\n            </Locale>\n        )\n    }\n}\n\n", "desc": " 按照固定的格式传入语言对象，会自动改变组件内默认文字的语言。" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 项目中使用，及切换语言", "code": "/**\n *\n * @title 项目中使用，及切换语言\n * @description Locale组件通过context传递语言包，子组件通过contextTypes获取context上的beeLocale语言包对象。\n *\n */\n\nimport React, {Component} from 'react';\nimport { Locale, Button, Popconfirm } from 'tinper-bee';\nimport PropTypes from 'prop-types';\nimport ZhCn from \"tinper-bee/lib/zh_CN\";;\nimport ZhTw from \"tinper-bee/lib/zh_TW\";;\nimport EnUS from \"tinper-bee/lib/en_US\";;\n\nclass DemoButton extends Component{\n    render() {\n       let localeText = this.context.beeLocale.DemoButton.text;\n        return (\n            <div style={{ marginBottom: 20}}>\n                <Button onClick={this.props.onChangeLang} colors=\"primary\">\n                    {localeText}\n                </Button>\n            </div>\n\n        )\n    }\n}\nDemoButton.contextTypes = {\n    beeLocale: PropTypes.object\n}\n\nlet en = {\n    ...EnUS,\n    DemoButton: {\n        text: 'Change Language'\n    },\n    PopconfirmContent: {\n       content: 'Do you like tinper-bee UI library?' ,\n        buttonText: 'see right'\n    }\n};\n\nlet zh = {\n    ...ZhCn,\n    DemoButton: {\n        text: '切换语言'\n    },\n    PopconfirmContent: {\n        content: '你喜欢tinper-bee组件库吗？' ,\n        buttonText: '看右边'\n    }\n};\n\nlet tw = {\n    ...ZhTw,\n    DemoButton: {\n        text: '切換語言'\n    },\n    PopconfirmContent: {\n        content: '你喜歡tinper-bee組件庫嗎？' ,\n        buttonText: '看右邊'\n    }\n};\n\n\n\nclass Demo1 extends Component {\n    state = {\n        lang: zh\n    }\n    handleChangeLang = () => {\n        let { lang } = this.state;\n        if(lang.lang === 'zh_CN'){\n            this.setState({\n                lang: tw\n            })\n        }else if(lang.lang === 'zh_TW'){\n            this.setState({\n                lang: en\n            })\n        }else{\n            this.setState({\n                lang: zh\n            })\n        }\n\n    }\n    render() {\n        let { lang } = this.state;\n\n        return (\n            <Locale locale={lang}>\n                <div>\n                    <DemoButton onChangeLang={this.handleChangeLang} />\n                    <Popconfirm\n                        trigger=\"click\"\n                        placement=\"right\"\n                        content={lang.PopconfirmContent.content}>\n                        <Button colors=\"primary\">{lang.PopconfirmContent.buttonText}</Button>\n                    </Popconfirm>\n                </div>\n\n            </Locale>\n        )\n    }\n}\n\n", "desc": " Locale组件通过context传递语言包，子组件通过contextTypes获取context上的beeLocale语言包对象。" }];
 	
 	var Demo = function (_Component) {
 	    _inherits(Demo, _Component);
@@ -6545,6 +6545,12 @@
 	        goto: '跳至',
 	        page: '页',
 	        ok: '确认'
+	    },
+	    Grid: {
+	        'fixTitle': '锁定',
+	        'noFixTitle': '解锁',
+	        'hideTitle': '隐藏',
+	        'rowFilter': '行过滤'
 	    }
 	};
 	module.exports = exports['default'];
@@ -9112,6 +9118,12 @@
 	        goto: 'goto',
 	        page: 'page',
 	        ok: 'ok'
+	    },
+	    Grid: {
+	        'fixTitle': 'fix',
+	        'noFixTitle': 'unfix',
+	        'hideTitle': 'hide',
+	        'rowFilter': 'rowFilter'
 	    }
 	};
 	module.exports = exports['default'];
@@ -9151,6 +9163,10 @@
 	var _zh_CN = __webpack_require__(70);
 	
 	var _zh_CN2 = _interopRequireDefault(_zh_CN);
+	
+	var _zh_TW = __webpack_require__(98);
+	
+	var _zh_TW2 = _interopRequireDefault(_zh_TW);
 	
 	var _en_US = __webpack_require__(96);
 	
@@ -9220,6 +9236,16 @@
 	    }
 	});
 	
+	var tw = _extends({}, _zh_TW2['default'], {
+	    DemoButton: {
+	        text: '切換語言'
+	    },
+	    PopconfirmContent: {
+	        content: '你喜歡tinper-bee組件庫嗎？',
+	        buttonText: '看右邊'
+	    }
+	});
+	
 	var Demo1 = function (_Component2) {
 	    _inherits(Demo1, _Component2);
 	
@@ -9238,6 +9264,10 @@
 	            var lang = _this2.state.lang;
 	
 	            if (lang.lang === 'zh_CN') {
+	                _this2.setState({
+	                    lang: tw
+	                });
+	            } else if (lang.lang === 'zh_TW') {
 	                _this2.setState({
 	                    lang: en
 	                });
@@ -9280,6 +9310,44 @@
 	}(_react.Component);
 	
 	exports['default'] = Demo1;
+	module.exports = exports['default'];
+
+/***/ }),
+/* 98 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports['default'] = {
+	    lang: 'zh_TW',
+	    Popconfirm: {
+	        ok: '確認',
+	        cancel: '取消'
+	    },
+	    Table: {
+	        noData: '無數據'
+	    },
+	    Clipboard: {
+	        copy: '複製'
+	    },
+	    Pagination: {
+	        total: '共',
+	        items: '條',
+	        show: '顯示',
+	        goto: '跳至',
+	        page: '頁',
+	        ok: '確認'
+	    },
+	    Grid: {
+	        'fixTitle': '鎖定',
+	        'noFixTitle': '解鎖',
+	        'hideTitle': '隱藏',
+	        'rowFilter': '行過濾'
+	    }
+	};
 	module.exports = exports['default'];
 
 /***/ })

@@ -17,5 +17,11 @@ export default {
         goto: 'goto',
         page: 'page',
         ok: 'ok'
+    },
+    Grid:{
+        'fixTitle': 'fix',
+        'noFixTitle': 'unfix',
+        'hideTitle': 'hide',
+        'rowFilter': 'rowFilter'
     }
 }

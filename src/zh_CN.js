@@ -17,5 +17,11 @@ export default {
         goto: '跳至',
         page: '页',
         ok: '确认'
+    },
+    Grid:{
+        'fixTitle': '锁定',
+        'noFixTitle': '解锁',
+        'hideTitle': '隐藏',
+        'rowFilter':'行过滤'
     }
 }

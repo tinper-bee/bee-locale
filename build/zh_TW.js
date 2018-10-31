@@ -4,30 +4,30 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports["default"] = {
-    lang: 'zh_CN',
+    lang: 'zh_TW',
     Popconfirm: {
-        ok: '确认',
+        ok: '確認',
         cancel: '取消'
     },
     Table: {
-        noData: '无数据'
+        noData: '無數據'
     },
     Clipboard: {
-        copy: '复制'
+        copy: '複製'
     },
     Pagination: {
         total: '共',
-        items: '条',
-        show: '显示',
+        items: '條',
+        show: '顯示',
         "goto": '跳至',
-        page: '页',
-        ok: '确认'
+        page: '頁',
+        ok: '確認'
     },
     Grid: {
-        'fixTitle': '锁定',
-        'noFixTitle': '解锁',
-        'hideTitle': '隐藏',
-        'rowFilter': '行过滤'
+        'fixTitle': '鎖定',
+        'noFixTitle': '解鎖',
+        'hideTitle': '隱藏',
+        'rowFilter': '行過濾'
     }
 };
 module.exports = exports['default'];

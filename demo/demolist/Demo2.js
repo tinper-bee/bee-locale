@@ -11,6 +11,7 @@ import PropTypes from 'prop-types';
 import Popconfirm from 'bee-popconfirm';
 import Button from 'bee-button';
 import ZhCn from "../../src/zh_CN";
+import ZhTw from "../../src/zh_TW";
 import EnUS from "../../src/en_US";
 
 class DemoButton extends Component{
@@ -52,6 +53,17 @@ let zh = {
     }
 };
 
+let tw = {
+    ...ZhTw,
+    DemoButton: {
+        text: '切換語言'
+    },
+    PopconfirmContent: {
+        content: '你喜歡tinper-bee組件庫嗎？' ,
+        buttonText: '看右邊'
+    }
+};
+
 
 
 class Demo1 extends Component {
@@ -61,6 +73,10 @@ class Demo1 extends Component {
     handleChangeLang = () => {
         let { lang } = this.state;
         if(lang.lang === 'zh_CN'){
+            this.setState({
+                lang: tw
+            })
+        }else if(lang.lang === 'zh_TW'){
             this.setState({
                 lang: en
             })
