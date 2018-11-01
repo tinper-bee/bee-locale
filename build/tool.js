@@ -19,7 +19,12 @@ function getComponentLocale(props, context, componentName, getDefaultLocale) {
     }
 
     var result = _extends({}, locale, props.locale);
-    result.lang = _extends({}, locale.lang, props.locale.lang);
+    if (props.locale) {
+        result.lang = _extends({}, locale.lang, props.locale.lang);
+    } else {
+        result.lang = _extends({}, locale.lang);
+    }
+
     return result;
 }
 

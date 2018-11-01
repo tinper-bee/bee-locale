@@ -12,10 +12,17 @@ export function getComponentLocale(props, context, componentName, getDefaultLoca
         ...locale,
         ...props.locale,
     };
-    result.lang = {
-        ...locale.lang,
-        ...props.locale.lang,
-    };
+    if(props.locale){
+        result.lang = {
+            ...locale.lang,
+            ...props.locale.lang,
+        };
+    }else{
+        result.lang = {
+            ...locale.lang
+        };
+    }
+    
     return result;
 }
 
