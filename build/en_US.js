@@ -38,7 +38,9 @@ exports["default"] = {
         'fixTitle': 'fix',
         'noFixTitle': 'unfix',
         'hideTitle': 'hide',
-        'rowFilter': 'rowFilter'
+        'rowFilter': 'rowFilter',
+        'openRowFilter': 'openRowFilter',
+        'closeRowFilter': 'closeRowFilter'
     }
 };
 module.exports = exports['default'];

@@ -38,7 +38,9 @@ exports["default"] = {
         'fixTitle': '鎖定',
         'noFixTitle': '解鎖',
         'hideTitle': '隱藏',
-        'rowFilter': '行過濾'
+        'rowFilter': '行過濾',
+        'openRowFilter': '打開行過濾',
+        'closeRowFilter': '關閉行過濾'
     }
 };
 module.exports = exports['default'];
