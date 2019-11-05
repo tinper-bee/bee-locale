@@ -1,3 +1,8 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/tinper-bee/bee-locale/compare/v0.0.14...v1.0.0) (2019-11-05)
+
+
+
 <a name="0.0.14"></a>
 ## [0.0.14](https://github.com/tinper-bee/bee-locale/compare/v0.0.13...v0.0.14) (2019-05-21)
 
