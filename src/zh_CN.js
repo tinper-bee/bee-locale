@@ -55,5 +55,10 @@ export default {
     InputNumber:{
         'msgMax':'值不能大于最大值',
         'msgMin':'值不能小于最小值'
+    },
+    Modal:{
+        'ok':'确定',
+        'gotit':'知道了',
+        'cancel':'取消',
     }
 }
