@@ -58,7 +58,7 @@ exports["default"] = {
     },
     InputNumber: {
         'msgMax': 'Cannot be greater than the Max value',
-        'msgMin': 'Canmot be less than the Min value'
+        'msgMin': 'Cannot be less than the Min value'
     },
     Modal: {
         'ok': 'OK',
